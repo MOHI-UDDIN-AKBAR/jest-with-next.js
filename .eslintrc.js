@@ -20,5 +20,11 @@ module.exports = {
     sourceType: "module",
   },
   //   plugins: ["react", "@typescript-eslint"],
-  rules: {},
+  rules: {
+    "@typescript-eslint/no-unused-vars": "off",
+    "testing-library/no-render-in-setup": [
+      "error",
+      { allowTestingFrameworkSetupHook: "beforeEach" },
+    ],
+  },
 };

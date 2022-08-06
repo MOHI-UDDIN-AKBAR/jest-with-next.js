@@ -25,7 +25,7 @@ const Counter = ({ description, defaultCount }: IProps) => {
       <button
         aria-label="decrement"
         type="button"
-        onClick={(e) => setCounter((prev) => prev - number)}
+        onClick={() => setCounter((prev) => prev - number)}
       >
         -
       </button>
@@ -33,7 +33,7 @@ const Counter = ({ description, defaultCount }: IProps) => {
       <button
         aria-label="increment"
         type="button"
-        onClick={(e) => setCounter((prev) => prev + number)}
+        onClick={() => setCounter((prev) => prev + number)}
       >
         +
       </button>
