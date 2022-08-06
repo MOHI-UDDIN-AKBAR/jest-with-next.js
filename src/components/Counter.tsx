@@ -5,19 +5,35 @@ interface IProps {
 }
 const Counter = ({ description, defaultCount }: IProps) => {
   const [counter, setCounter] = useState(defaultCount);
+  const [number, setNumber] = useState(1);
   return (
     <div>
       <h1>
         {description} : {defaultCount}
       </h1>
-      <button type="button" onClick={(e) => setCounter((prev) => prev - 1)}>
+      <div>
+        <label htmlFor="text">
+          Input Number:
+          <input
+            type="text"
+            id="text"
+            value={number}
+            onChange={(e) => setNumber(Number(e.target.value) || 0)}
+          />
+        </label>
+      </div>
+      <button
+        aria-label="decrement"
+        type="button"
+        onClick={(e) => setCounter((prev) => prev - number)}
+      >
         -
       </button>
       <span>Counter is {counter}</span>
       <button
+        aria-label="increment"
         type="button"
-        onClick={(e) => setCounter((prev) => prev + 1)}
-        data-testid="ok"
+        onClick={(e) => setCounter((prev) => prev + number)}
       >
         +
       </button>
